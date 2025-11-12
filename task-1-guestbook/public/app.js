@@ -1,6 +1,12 @@
 "use strict";
 /// <reference lib="dom" />
 const $ = (sel) => document.querySelector(sel);
+const escapeHtml = (s) => String(s)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
 async function loadEntries() {
     const res = await fetch("/entries");
     const data = (await res.json());
@@ -31,8 +37,18 @@ function render(entries) {
     list.innerHTML = "";
     for (const entry of entries) {
         const li = document.createElement("li");
+        const header = document.createElement('header');
+        const nameEl = document.createElement('strong');
+        nameEl.textContent = entry.name;
+        const dateEl = document.createElement('small');
         const dt = new Date(entry.time).toLocaleString();
-        li.innerHTML = `<strong>${entry.name}</strong> <small>(${dt})</small><br/>${entry.msg}`;
+        dateEl.textContent = ` ${dt}`;
+        header.appendChild(nameEl);
+        header.appendChild(dateEl);
+        const msg = document.createElement('p');
+        msg.innerHTML = escapeHtml(entry.msg).replace(/\n/g, '<br/>');
+        li.appendChild(header);
+        li.appendChild(msg);
         list.appendChild(li);
     }
 }

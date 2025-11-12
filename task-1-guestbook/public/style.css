@@ -1,5 +1,7 @@
 :root {
   font-family: system-ui, sans-serif;
+  --control-width: 500px; /* default width for inputs/buttons */
+  --button-width: 150px; /* default width for buttons */
 }
 main {
   max-width: 640px;
@@ -21,4 +23,86 @@ form {
   border: 1px solid #ddd;
   padding: 0.75rem;
   border-radius: 0.5rem;
+}
+
+/* Improved form and list styling */
+body {
+  background: #f7f8fa;
+  color: #222;
+  line-height: 1.5;
+}
+header h1 {
+  text-align: center;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+main h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+form input,
+form textarea {
+  /* make inputs match button width by default; change --control-width to adjust */
+  width: var(--control-width);
+  /* ensure padding is included in width calculations so visual widths match */
+  box-sizing: border-box;
+  /* vertical size (height) should match the button */
+  padding: 0.45rem 0.5rem;
+  border: 1px solid #ccd0d7;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  background: #fff;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.02) inset;
+  margin: 0 auto; /* center controls */
+  display: block;
+}
+/* Prevent manual resize of textarea and enable wrapping at control width */
+form textarea {
+  resize: none; /* disable manual resize */
+  white-space: pre-wrap; /* preserve newlines but wrap long lines */
+  overflow-wrap: break-word; /* break long words to avoid overflow */
+}
+form button {
+  background: #0066ff;
+  color: white;
+  border: none;
+  /* vertical size aligned with inputs */
+  padding: 0.45rem 0.9rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  width: var(--button-width);
+  margin: 0 auto; /* center button */
+}
+form button:active {
+  transform: translateY(1px);
+}
+#gb-list li {
+  background: white;
+  box-shadow: 0 6px 18px rgba(20, 24, 34, 0.04);
+  border: 1px solid rgba(16, 24, 40, 0.06);
+}
+#gb-list li header {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin-bottom: 0.4rem;
+}
+#gb-list li strong {
+  font-size: 1rem;
+}
+#gb-list li small {
+  color: #666;
+  font-size: 0.85rem;
+}
+#gb-list li p {
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+footer {
+  text-align: center;
+  color: #666;
+  font-size: 0.9rem;
+  margin: 2rem 0;
 }

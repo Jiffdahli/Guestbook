@@ -1,0 +1,56 @@
+{
+  "guests": [
+    {
+      "name": "Jiffdahli",
+      "message": "Godlike time"
+    },
+    {
+      "name": "Tester",
+      "message": "Posted from curl"
+    },
+    {
+      "name": "Lucas",
+      "message": "Thank you — will visit again!"
+    },
+    {
+      "name": "Isabella",
+      "message": "I loved the food and the view."
+    },
+    {
+      "name": "Noah",
+      "message": "Fantastic service and location."
+    },
+    {
+      "name": "Sophia",
+      "message": "Memories to cherish — beautiful experience."
+    },
+    {
+      "name": "Liam",
+      "message": "A calm and peaceful stay, thank you!"
+    },
+    {
+      "name": "Emma",
+      "message": "Lovely place and friendly people — highly recommended."
+    },
+    {
+      "name": "Bob",
+      "message": "Had a wonderful time visiting."
+    },
+    {
+      "name": "Alice",
+      "message": "Hello, this is a great guestbook!"
+    },
+    {
+      "name": "Matilda",
+      "message": "It was wonderful. I did enjoy every single day."
+    },
+    {
+      "name": "Oliver",
+      "message": "Thank you for everything. It was wonderful."
+    },
+    {
+      "name": "Jimmy",
+      "message": "I enjoyed everything. Extraordinary Time, thanks"
+    }
+  ]
+}
