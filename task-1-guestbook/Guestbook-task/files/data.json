@@ -1,0 +1,12 @@
+    {
+        "guests": [
+            {
+                "name": "Alice",
+                "message": "Hello, this is a great guestbook!"
+            },
+            {
+                "name": "Bob",
+                "message": "Had a wonderful time visiting."
+            }
+        ]
+    }
